@@ -2,6 +2,7 @@ package com.promineotech.jeep.jeepsales;
 
 import java.util.List;
 
+import com.promineotech.JeepModel;
 import com.promineotech.jeep.jeepsales.service.JeepSalesService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class BasicJeepSalesController implements JeepSalesController{
     private JeepSalesService jeepSalesService;
 
     @Override
-    public List<Jeep> fetchJeeps(String model, String trim) {
+    public List<Jeep> fetchJeeps(JeepModel model, String trim) {
         log.debug("model = {}, trim = {}", model, trim);
         return jeepSalesService.fetchJeeps(model, trim);
     }
